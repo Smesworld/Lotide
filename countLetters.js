@@ -10,10 +10,12 @@ const countLetters = function(inputString) {
   const result = {};
 
   for (const letter of inputString) {
-    if (result[letter]) {
-      result[letter] += 1;
-    } else {
-      result[letter] = 1;
+    if (letter !== " ") {
+      if (result[letter]) {
+        result[letter] += 1;
+      } else {
+        result[letter] = 1;
+      }
     }
   }
 
