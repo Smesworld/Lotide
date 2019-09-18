@@ -6,9 +6,9 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const findKeyByValue = function(inputObject, searchKey) {
+const findKeyByValue = function(inputObject, searchValue) {
   for (const item in inputObject) {
-    if (inputObject[item] === searchKey) {
+    if (inputObject[item] === searchValue) {
       return item;
     }
   }
