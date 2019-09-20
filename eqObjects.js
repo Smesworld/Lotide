@@ -6,27 +6,13 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const eqArrays = function(firstArray, secondArray) {
-  let equal = true;
-  if (firstArray.length !== secondArray.length) {
-    equal = false;
-  }
-  for (let i = 0; i < firstArray.length; i++) {
-    if (Array.isArray(firstArray[i]) && Array.isArray(secondArray[i])) {
-      equal = eqArrays(firstArray[i], secondArray[i]);
-    } else if (firstArray[i] !== secondArray[i]) {
-      equal = false;
-    }
-  }
-
-  return equal;
-};
-
 const eqObjects = function(object1, object2) {
+  //generate arrays of keys
   const keys1 = Object.keys(object1);
   const keys2 = Object.keys(object2);
   let equivalent = true;
 
+  //test if key arrays are same length
   if (keys1.length !== keys2.length) {
     equivalent = false;
   }
@@ -34,8 +20,8 @@ const eqObjects = function(object1, object2) {
   for (const key in object1) {
     if (!keys2.includes(key)) {
       equivalent = false;
-    } else if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
-      equivalent = eqArrays(object1[key], object2[key]);
+    } else if (object1[key] instanceof Object && object2[key] instanceof Object) {
+      equivalent = eqObjects(object1[key], object2[key]);
     } else if (object1[key] !== object2[key]) {
       equivalent = false;
     }
@@ -73,3 +59,7 @@ assertEqual(eqObjects(cd, cd2), false);
 
 const cd3 = { c: "1", d: 4 };
 assertEqual(eqObjects(cd, cd3), false);
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false);
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
