@@ -1,12 +1,21 @@
-const assertEqual = require('../assertEqual');
 const tail = require('../tail');
+const assert = require('chai').assert;
 
-const numbers = [1,2,3];
-tail(numbers);
-assertEqual(numbers.length, 3);
+describe("#tail", () => {
+  it("numbers remains unchanged by tail()", () => {
+    const numbers = [1, 2, 3]
+    tail(numbers);
+    assert.deepEqual(numbers, [1, 2, 3]);
+  });
+  it("returns [2, 3] for [1, 2, 3]", () => {
+    assert.deepEqual(tail([1, 2, 3]), [2, 3]);
+  });
 
-const empty = [];
-assertEqual(empty.length, 0);
+  it("returns [] for [5]", () => {
+    assert.deepEqual(tail([5]), []); 
+  });
 
-const single = ["food"];
-assertEqual(single.length, 1);
+  it("returns [] for []", () => {
+    assert.deepEqual(tail([]), []); 
+  });
+});
