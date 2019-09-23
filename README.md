@@ -44,4 +44,4 @@ The following functions are currently implemented:
 * `middle(array)`: returns sub-array coresponding to the middle of input array
 * `tail(array)`: returns new array without the first value of input array
 * `takeUntil(array, function)`: returns sub-array of input array until function evaluates true
-* `without()`:
+* `without(array1, array2)`: returns sub-array of array1 with any elements of array2 removed
