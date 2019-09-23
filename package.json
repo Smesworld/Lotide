@@ -14,8 +14,7 @@
     "url": "git+https://github.com/Smesworld/Lotide.git"
   },
   "author": { "name" : "Alan Dodge",
-    "email": "smesworld@hotmail.com",
-    "url":
+    "email": "smesworld@hotmail.com"
   },
   "license": "ISC",
   "bugs": {
