@@ -26,8 +26,6 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `function1(...)`: description
-
 * `assertArraysEqual(array1, array2)`: Compairs two arrays and outputs a true or false message based on that comparison
 * `assertEqual(data1, data2)`: Compairs primative data-types and outputs a true or false message based on that comparison
 * `assertObjectsEqual(object1, object2)`: Compairs two objects and outputs a true or false message based on that comparison
