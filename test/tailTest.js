@@ -3,7 +3,7 @@ const assert = require('chai').assert;
 
 describe("#tail", () => {
   it("numbers remains unchanged by tail()", () => {
-    const numbers = [1, 2, 3]
+    const numbers = [1, 2, 3];
     tail(numbers);
     assert.deepEqual(numbers, [1, 2, 3]);
   });
@@ -12,10 +12,10 @@ describe("#tail", () => {
   });
 
   it("returns [] for [5]", () => {
-    assert.deepEqual(tail([5]), []); 
+    assert.deepEqual(tail([5]), []);
   });
 
   it("returns [] for []", () => {
-    assert.deepEqual(tail([]), []); 
+    assert.deepEqual(tail([]), []);
   });
 });
