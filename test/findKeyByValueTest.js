@@ -1,7 +1,7 @@
 const findKeyByValue = require("../findKeyByValue");
 const assert = require('chai').assert;
 
-describe("#tail", () => {
+describe("#findKeyByValue", () => {
   const bestTVShowsByGenre = {
     sciFi: "The Expanse",
     comedy: "Brooklyn Nine-Nine",
